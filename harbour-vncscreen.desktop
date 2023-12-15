@@ -10,4 +10,9 @@ Name=VNC Screen
 # Remember to comment out the following line, if you do not want to use
 # a different app name in German locale (de).
 Name[de]=VNC Screen
+Name[ru]=VNC Экран
 
+[X-Application]
+Permissions=Internet;Audio;Microphone;Pictures;UserDirs;MediaIndexing
+OrganizationName=org.marcellodiguglielmo
+ApplicationName=harbour-vncscreen

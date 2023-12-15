@@ -73,6 +73,18 @@ Page {
                     left: parent.left
                     margins: Theme.paddingLarge
                 }
+                label: qsTr("Aurora port author")
+                text: "Ilya Vysotsky"
+                detailUrl: "<a href='http://vikamobile.ru'>http://vikamobile.ru</a>"
+
+                separator: true
+            }
+
+            BlockText {
+                anchors {
+                    left: parent.left
+                    margins: Theme.paddingLarge
+                }
                 label: qsTr("License")
                 text: qsTr("VNC Screen is free software and licensed under GNU Geneal Public License v3")
                 detailUrl: "<a href='https://www.gnu.org/licenses/gpl-3.0.en.html'>Details</a>"

@@ -12,7 +12,7 @@
 # The name of your application
 TARGET = harbour-vncscreen
 
-CONFIG += sailfishapp
+CONFIG += auroraapp
 
 INCLUDEPATH+=src/libvncclient
 INCLUDEPATH+=src/libvncclient/libjpeg
@@ -138,11 +138,11 @@ OTHER_FILES += qml/harbour-vncscreen.qml \
     translations/*.ts \
     harbour-vncscreen.desktop
 
-SAILFISHAPP_ICONS = 86x86 108x108 128x128 256x256
+AURORAAPP_ICONS = 86x86 108x108 128x128 172x172 256x256
 
 # to disable building translations every time, comment out the
 # following CONFIG line
-CONFIG += sailfishapp_i18n
+CONFIG += auroraapp_i18n
 
 # If you aren't
 # planning to localize your app, remember to comment out the

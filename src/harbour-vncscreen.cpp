@@ -22,7 +22,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <QtQuick>
 #endif
 #include <QtQml>
-#include <sailfishapp.h>
+#include <auroraapp.h>
 #include <QQmlEngine>
 #include <QScopedPointer>
 #include <QQuickView>
@@ -35,9 +35,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 int main(int argc, char *argv[])
 {
 
-    QGuiApplication* application = SailfishApp::application(argc, argv);
+    QGuiApplication* application = Aurora::Application::application(argc, argv);
     application->setApplicationVersion(APP_VERSION);
-    application->setOrganizationName("Marcello Di Guglielmo");
+    application->setOrganizationName(QStringLiteral("org.marcellodiguglielmo"));
+    application->setApplicationName(QStringLiteral("harbour-vncscreen"));
 //    QString country=QLocale::system().name();
 //    QString appTranslationFile=QString("%1-%2.qm").arg(application->applicationName().toLower()).arg(country);
 //    qDebug()<<"appTranslationFile"<<appTranslationFile;
@@ -49,14 +50,14 @@ int main(int argc, char *argv[])
 //    }
 
     QScopedPointer<QGuiApplication> app(application);
-    QScopedPointer<QQuickView> v(SailfishApp::createView());
+    QScopedPointer<QQuickView> v(Aurora::Application::createView());
     qmlRegisterType<InterfaceRFB>("harbour.vncscreen.InterfaceRFB", 1, 0, "InterfaceRFB");
     qmlRegisterType<InterfaceSettings>("harbour.vncscreen.InterfaceSettings", 1, 0, "InterfaceSettings");
     QQmlEngine *engine=v->engine();
     ScreenProvider *screenProvider= new ScreenProvider(QQmlImageProviderBase::Image);
     engine->addImageProvider(QLatin1String("rfbimage"),screenProvider);
     //importante mettere i setSource dopo la configurazione degli engine
-    v->setSource(SailfishApp::pathTo("qml/harbour-vncscreen.qml"));
+    v->setSource(Aurora::Application::pathTo("qml/harbour-vncscreen.qml"));
     v->show();
     return app->exec();
 

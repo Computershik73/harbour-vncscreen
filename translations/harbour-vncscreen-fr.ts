@@ -39,6 +39,10 @@
         <source>If you like this app and would like to make a donation, via Paypal</source>
         <translation>Si vous appréciez cette application et voulez faire un don via Paypal</translation>
     </message>
+    <message>
+        <source>Aurora port author</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>BlockText</name>
